@@ -52,7 +52,7 @@ int result)
 “//[delimiter]\n”
 for example:
 “//[***]\n1***2***3” == 6
-11. Allow multiple delimiters like this:
+* Allow multiple delimiters like this:
 “//[delim1][delim2]\n”
 for example
 “//[*][%]\n1*2%3” == 6.
