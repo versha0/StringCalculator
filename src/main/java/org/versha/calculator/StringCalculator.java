@@ -2,7 +2,9 @@ package org.versha.calculator;
 
 public class StringCalculator
 {
+    static int called =0;
     public int add(String string){
+        getCalledCount();
         if(string.equals("")) return 0;
         String delimiter = ",|\\\n";
         if(string.matches("//(.*)\n(.*)")){
@@ -30,5 +32,9 @@ public class StringCalculator
             throw new IllegalArgumentException("Negative Number Not Allowed :"+negativeString);
         }
         return ans;
+    }
+
+    private static void getCalledCount(){
+        called++;
     }
 }
