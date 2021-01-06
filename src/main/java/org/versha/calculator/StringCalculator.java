@@ -24,6 +24,7 @@ public class StringCalculator
                 negativeNum++;
                 negativeString = negativeString+ " "+ arrayString[i];
             }
+            if(Integer.parseInt(arrayString[i])<1001)
             ans = ans+Integer.parseInt(arrayString[i]);
         }
         if(negativeNum==1)
