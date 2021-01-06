@@ -62,4 +62,8 @@ public class StringCalculatorTest
         }
     }
 
+    @Test public void addNumberStringWithGreaterThanOneThousand(){
+        assertEquals(1001,testObject.add("1000,1,1001"));
+    }
+
 }
