@@ -1,5 +1,11 @@
 package org.versha.calculator;
-
+/*
+This class is a String calculator
+class member called keeps track of how many times the method add() is called
+Method add() take string as input ans will return the sum of the numbers of that string
+getCalledCount() method increments the called member var everytime add() is called
+addStringArray() method takes string array as input and gives the sum of the integers in the array as string
+ */
 public class StringCalculator
 {
     static int called =0;
@@ -51,6 +57,7 @@ public class StringCalculator
         }
         return ans;
     }
+
 
     private static void getCalledCount(){
         called++;
