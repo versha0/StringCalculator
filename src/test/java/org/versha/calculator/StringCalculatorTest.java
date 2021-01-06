@@ -70,4 +70,13 @@ public class StringCalculatorTest
         assertEquals(6,testObject.add("//[***]\n1***2***3"));
     }
 
+    @Test public void addNumberStringWithAnyNumberOfDelimiterOfLengthOne(){
+        assertEquals(6,testObject.add("//[*][%]\n1*2%3"));
+    }
+
+    @Test public void addNumberStringWithAnyLengthAnyNumberOfDelimiter(){
+        assertEquals(6,testObject.add("//[**][%%]\n1**2%%3"));
+    }
+
+
 }

@@ -10,11 +10,18 @@ public class StringCalculator
         if(string.matches("//(.*)\n(.*)")){
             int lastIndexDelimiter = string.indexOf('\n');
             if(string.charAt(2)=='['){
-                System.out.println(delimiter);
                 delimiter= string.substring(2,lastIndexDelimiter)+ delimiter.substring(1);
-                System.out.println(delimiter);
+                int numOfSquareBrace=0;
+                for (int i=0;i<delimiter.length();i++){
+                    if(delimiter.charAt(i)==']'){
+                        numOfSquareBrace++;
+                    }
+                }
+                if(numOfSquareBrace>1){
+                    delimiter=delimiter.substring(0,delimiter.length()-3);
+                    delimiter= delimiter.replaceAll("]","]|")+ "\\\n";
+                }
                 string = string.substring(lastIndexDelimiter);
-                System.out.println(string);
             }
             else{
                 delimiter = string.charAt(2) + delimiter.substring(1);
@@ -30,8 +37,7 @@ public class StringCalculator
         int negativeNum=0;
         String negativeString = "";
         for(int i=0;i<arrayString.length;i++){
-            System.out.println(arrayString[i]);
-            if(!arrayString[i].equals("") && Integer.parseInt(arrayString[i])<0){
+            if(!arrayString[i].equals("") && !arrayString[i].equals("") && Integer.parseInt(arrayString[i])<0){
                 negativeNum++;
                 negativeString = negativeString+ " "+ arrayString[i];
             }
