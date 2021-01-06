@@ -7,6 +7,10 @@ public class StringCalculator
         string = string.replaceAll("\n",",");
         System.out.println(string);
         String[] arrayString = string.split(",");
+        return addStringArray(arrayString);
+    }
+
+    private static int addStringArray(String[] arrayString){
         int ans =0;
         for(int i=0;i<arrayString.length;i++){
             ans = ans+Integer.parseInt(arrayString[i]);
