@@ -8,8 +8,18 @@ public class StringCalculator
         if(string.equals("")) return 0;
         String delimiter = ",|\\\n";
         if(string.matches("//(.*)\n(.*)")){
-            delimiter = string.charAt(2)+delimiter.substring(1);
-            string = string.substring(4);
+            int lastIndexDelimiter = string.indexOf('\n');
+            if(string.charAt(2)=='['){
+                System.out.println(delimiter);
+                delimiter= string.substring(2,lastIndexDelimiter)+ delimiter.substring(1);
+                System.out.println(delimiter);
+                string = string.substring(lastIndexDelimiter);
+                System.out.println(string);
+            }
+            else{
+                delimiter = string.charAt(2) + delimiter.substring(1);
+                string = string.substring(4);
+            }
         }
         String[] arrayString = string.split(delimiter);
         return addStringArray(arrayString);
@@ -20,11 +30,12 @@ public class StringCalculator
         int negativeNum=0;
         String negativeString = "";
         for(int i=0;i<arrayString.length;i++){
-            if(Integer.parseInt(arrayString[i])<0){
+            System.out.println(arrayString[i]);
+            if(!arrayString[i].equals("") && Integer.parseInt(arrayString[i])<0){
                 negativeNum++;
                 negativeString = negativeString+ " "+ arrayString[i];
             }
-            if(Integer.parseInt(arrayString[i])<1001)
+            if(!arrayString[i].equals("") && Integer.parseInt(arrayString[i])<1001)
             ans = ans+Integer.parseInt(arrayString[i]);
         }
         if(negativeNum==1)
