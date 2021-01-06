@@ -32,4 +32,8 @@ public class StringCalculatorTest
         assertEquals(1000,testObject.add("100,200,300,400"));
     }
 
+    @Test public void addNumberStringWithNewLineInsteadOfComma(){
+        assertEquals(6,testObject.add("1\n2,3"));
+    }
+
 }
