@@ -4,7 +4,12 @@ public class StringCalculator
 {
     public int add(String string){
         if(string.equals("")) return 0;
-        String[] arrayString = string.split(",|\\\n");
+        String delimiter = ",|\\\n";
+        if(string.matches("//(.*)\n(.*)")){
+            delimiter = string.charAt(2)+delimiter.substring(1);
+            string = string.substring(4);
+        }
+        String[] arrayString = string.split(delimiter);
         return addStringArray(arrayString);
     }
 
