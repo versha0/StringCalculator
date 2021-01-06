@@ -66,4 +66,8 @@ public class StringCalculatorTest
         assertEquals(1001,testObject.add("1000,1,1001"));
     }
 
+    @Test public void addNumberStringWithAnyLengthDelimiter(){
+        assertEquals(6,testObject.add("//[***]\n1***2***3"));
+    }
+
 }
