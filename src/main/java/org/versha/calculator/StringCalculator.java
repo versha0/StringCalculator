@@ -13,10 +13,21 @@ public class StringCalculator
         return addStringArray(arrayString);
     }
 
-    private static int addStringArray(String[] arrayString){
+    private static int addStringArray(String[] arrayString) throws IllegalArgumentException{
         int ans =0;
+        int negativeNum=0;
+        String negativeString = "";
         for(int i=0;i<arrayString.length;i++){
+            if(Integer.parseInt(arrayString[i])<0){
+                negativeNum++;
+                negativeString = negativeString+ " "+ arrayString[i];
+            }
             ans = ans+Integer.parseInt(arrayString[i]);
+        }
+        if(negativeNum==1)
+            throw new IllegalArgumentException("Negative Number Not Allowed");
+        else if(negativeNum>1){
+            throw new IllegalArgumentException("Negative Number Not Allowed :"+negativeString);
         }
         return ans;
     }
