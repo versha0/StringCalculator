@@ -4,9 +4,7 @@ public class StringCalculator
 {
     public int add(String string){
         if(string.equals("")) return 0;
-        string = string.replaceAll("\n",",");
-        System.out.println(string);
-        String[] arrayString = string.split(",");
+        String[] arrayString = string.split(",|\\\n");
         return addStringArray(arrayString);
     }
 
