@@ -21,7 +21,15 @@ public class StringCalculatorTest
 
     @Test public void addOneNumberString(){
         assertEquals(100,testObject.add("100"));
+    }
 
+    @Test public void addTwoNumberString(){
+        assertEquals(300,testObject.add("100,200"));
+    }
+
+    @Test public void addThreeOrMoreNumberString(){
+        assertEquals(600,testObject.add("100,200,300"));
+        assertEquals(1000,testObject.add("100,200,300,400"));
     }
 
 }
