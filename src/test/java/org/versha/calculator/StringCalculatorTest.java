@@ -19,4 +19,9 @@ public class StringCalculatorTest
         assertEquals(0, testObject.add(""));
     }
 
+    @Test public void addOneNumberString(){
+        assertEquals(100,testObject.add("100"));
+
+    }
+
 }
